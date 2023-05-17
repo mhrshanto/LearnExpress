@@ -1,30 +1,39 @@
+// Middle Ware Practice
 const express = require('express');
-const multer = require('multer');
 
-var app = express();
-var appMulter = multer();
+app = express();
 
-var storage = multer.diskStorage({
-    destination: (req, file, callBack) => {
-        callBack(null, './uploads')
-    },
-    fileName: (req, file, callBack) => {
-        callBack(null,file.orginalname )
-    }
+
+// Application Middleware
+
+app.use((req, res, next) => {
+    console.log('This is middleware for application');
+    next();
 });
 
-var upload = multer({storage:storage}).single('myfile')
-app.post('/', (req, res) => {
-    upload(req, res, (error) => {
-        if (error) {
-            res.send('File Upload Fail')
-        }
-        else {
-            res.send('File Upload Success')
-        }
-    })
+// Route Middleware
+
+app.use('/about', (req, res, next) => {
+    console.log('This is Route Middleware for about page');
+    next();
+});
+
+app.get('/', (req, res) => {
+    res.send("This is Homepage");
+});
+
+app.get('/about', (req, res) => {
+    res.send("This is Aboutpage");
+});
+
+app.get('/contact', (req, res) => {
+    res.send("This is Contactpage");
+});
+
+app.get('/help', (req, res) => {
+    res.send("This is Helppage");
 });
 
 app.listen(8000, () => {
-    console.log('Server start success');
+    console.log('Server Running Success')
 })
