@@ -6,9 +6,3 @@ We have created branches for every tutorial. Now we have only 2. We will upload 
 
 01. File Upload Branch (Where we discuss about the Multer)![Screenshot_316](https://github.com/mhrshanto/LearnExpress/assets/74135853/4a66cd27-5ddf-4a55-a417-0c0a49bd3f81)
 
-02. MiddleWare Branch (Where we discuss about the Middleware)
-
-![Screenshot_315](https://github.com/mhrshanto/LearnExpress/assets/74135853/40b9e98d-a7d0-4005-a254-ab9cbe227d67)
-
-![Screenshot_314](https://github.com/mhrshanto/LearnExpress/assets/74135853/d7c6e85f-9588-4682-86ee-9bb14cb7e3db)
-
